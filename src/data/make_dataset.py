@@ -61,10 +61,10 @@ def process_data(input_filepath_users, input_filepath_caract, input_filepath_pla
     df = modif_target_variable(df)
 
     # Replace values -1 and 0
-    df = replace_values(df)
+    #df = replace_values(df)
 
     # Drop columns
-    df = drop_columns(df)
+    #df = drop_columns(df)
 
     # Drop lines with NaN values
     df = drop_lines_with_nan_values(df)
@@ -103,7 +103,7 @@ def create_new_columns_users(df):
     return df
 
 def create_new_columns_caract(df):
-    # Create new columns
+    # Create new columnsdf = add_new_columns(df, nb_victim, nb_vehicles)
     df["hour"] = df["hrmn"].astype(str).apply(lambda x : x[:-3])
     df.drop(['hrmn', 'an'], inplace=True, axis=1)
     return df
